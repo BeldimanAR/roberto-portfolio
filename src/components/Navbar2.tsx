@@ -1,25 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { navLinks } from "../constants/index.js";
 import styled from "styled-components";
 import Link from "next/link.js";
 import Image from "next/image.js";
 
-const NavbarContainer = styled.nav`
-  padding-left: 34px;
-  padding-right: 34px;
+interface NavProps {
+  scrolled: boolean;
+}
+
+const NavbarContainer = styled.nav<NavProps>`
+  ${({ scrolled }) => `
+  padding: 0 16px;
   width: 100%;
   display: flex;
   align-items: center;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 5px;
   position: fixed;
   top: 0;
   z-index: 20;
-  background-color: #050816;
-
+  background-color: ${scrolled ? "#primary" : "transparent"};
   @media (min-width: 640px) {
     padding-left: 16px;
-  }
+  `}
 `;
 
 const Container = styled.div`
@@ -128,9 +130,25 @@ const StyledLiMobile = styled.li<StyledLiProps>`
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      if (scrollTop > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <NavbarContainer>
+    <NavbarContainer scrolled={scrolled}>
       <Container>
         <Links
           href="/"

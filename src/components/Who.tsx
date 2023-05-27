@@ -104,7 +104,7 @@ const Who = () => {
           </Canvas>
         </Left>
         <Right>
-          <Title>Think outside the box</Title>
+          <Title>Thinking outside the box</Title>
           <WhatWeDo>
             <Line src="/line.png" />
             <Subtitle>Who I Am</Subtitle>
