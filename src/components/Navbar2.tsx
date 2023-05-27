@@ -18,7 +18,7 @@ const NavbarContainer = styled.nav<NavProps>`
   position: fixed;
   top: 0;
   z-index: 20;
-  background-color: ${scrolled ? "#primary" : "transparent"};
+  background-color: ${scrolled ? "#050816" : "transparent"};
   @media (min-width: 640px) {
     padding-left: 16px;
   `}
