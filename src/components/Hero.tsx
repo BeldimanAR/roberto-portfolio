@@ -137,7 +137,7 @@ const Hero = () => {
   const viewport = useViewport();
 
   const isMobile = viewport.width <= 768;
-  const scale = isMobile ? 1.5 : 2.6;
+  const scale = isMobile ? 1.5 : 2.4;
 
   return (
     <Section>
@@ -161,7 +161,7 @@ const Hero = () => {
           <Canvas>
             <Suspense fallback={null}>
               <OrbitControls enableZoom={false} />
-              <ambientLight intensity={1} />
+              <ambientLight intensity={1.5} />
               <directionalLight position={[3, 2, 1]} />
               <Sphere args={[1, 100, 200]} scale={scale}>
                 <MeshDistortMaterial

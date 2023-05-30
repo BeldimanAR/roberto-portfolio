@@ -4,12 +4,7 @@ import styled from "styled-components";
 import Link from "next/link.js";
 import Image from "next/image.js";
 
-interface NavProps {
-  scrolled: boolean;
-}
-
-const NavbarContainer = styled.nav<NavProps>`
-  ${({ scrolled }) => `
+const NavbarContainer = styled.nav`
   padding: 0 16px;
   width: 100%;
   display: flex;
@@ -18,10 +13,10 @@ const NavbarContainer = styled.nav<NavProps>`
   position: fixed;
   top: 0;
   z-index: 20;
-  background-color: ${scrolled ? "#050816" : "transparent"};
+  background-color: #050816;
   @media (min-width: 640px) {
     padding-left: 16px;
-  `}
+  }
 `;
 
 const Container = styled.div`
@@ -130,25 +125,9 @@ const StyledLiMobile = styled.li<StyledLiProps>`
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      if (scrollTop > 100) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
-    <NavbarContainer scrolled={scrolled}>
+    <NavbarContainer>
       <Container>
         <Links
           href="/"
