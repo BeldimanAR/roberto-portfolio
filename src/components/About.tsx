@@ -138,7 +138,7 @@ const About = () => {
         <Subtitle>Who I Am</Subtitle>
         <Right>
           <Desc>
-            I'm a skilled frontend developer with experience in Next.js,
+            I am a skilled frontend developer with experience in Next.js,
             React.js, GraphQL, Redux Toolkit, and NodeJS. I specialize in
             creating user-friendly interfaces and delivering high-quality
             software.

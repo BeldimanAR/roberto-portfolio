@@ -195,7 +195,7 @@ const Hero = () => {
       <Container>
         <Left>
           <Title>
-            Hi, I'm <Span>Roberto</Span>
+            Hi, I am <Span>Roberto</Span>
           </Title>
           <WhatWeDo>
             {/* <Line src="/line.png" /> */}
