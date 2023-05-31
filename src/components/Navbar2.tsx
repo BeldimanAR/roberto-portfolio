@@ -35,8 +35,8 @@ const Links = styled(Link)`
 `;
 
 const StyledLogo = styled.div`
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 3.25rem;
+  height: 3.25rem;
   position: relative;
 `;
 const StyledText = styled.p`
@@ -150,9 +150,7 @@ const Navbar = () => {
                   setActive(link.title);
                 }}
               >
-                <Link href={`#${link.id}`} legacyBehavior>
-                  {link.title}
-                </Link>
+                <a href={`#${link.id}`}>{link.title}</a>
               </StyledLi>
             );
           })}

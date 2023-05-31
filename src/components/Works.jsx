@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import { experiences } from "../constants";
 import { textVariant } from "../constants/motion.js";
+import { SectionWrapper } from "../hoc";
 
 const CardContainer = styled.div`
   display: flex;
@@ -132,4 +133,4 @@ const Works = () => {
   );
 };
 
-export default Works;
+export default SectionWrapper(Works, "work");

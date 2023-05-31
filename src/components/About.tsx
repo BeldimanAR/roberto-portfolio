@@ -2,11 +2,14 @@ import React, { Suspense } from "react";
 import styled from "styled-components";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import { SectionWrapper } from "../hoc";
 import Cube from "./Cube";
+import { motion } from "framer-motion";
+import { textVariant } from "../constants/motion.js";
 
 const Section = styled.div`
-  height: 100vh;
-  scroll-snap-align: center;
+  /* height: 100vh; */
+  /* scroll-snap-align: center; */
   display: flex;
   justify-content: center;
 
@@ -36,6 +39,7 @@ const Left = styled.div`
 
 const Title = styled.h1`
   font-size: 74px;
+  line-height: 1.2;
 
   @media only screen and (max-width: 768px) {
     text-align: center;
@@ -76,7 +80,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const Right = styled.div`
+const Right = styled(motion.div)`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -89,12 +93,12 @@ const Right = styled.div`
   }
 `;
 
-const Who = () => {
+const About = () => {
   return (
     <Section>
       <Container>
         <Left>
-          <Canvas camera={{ position: [5, 5, 5], fov: 25 }}>
+          <Canvas camera={{ position: [5, 5, 5], fov: 16 }}>
             <Suspense fallback={null}>
               <ambientLight intensity={1.5} />
               <directionalLight position={[3, 2, 1]} />
@@ -103,7 +107,8 @@ const Who = () => {
             </Suspense>
           </Canvas>
         </Left>
-        <Right>
+
+        <Right variants={textVariant()}>
           <Title>Thinking outside the box</Title>
           <WhatWeDo>
             <Line src="/line.png" />
@@ -122,4 +127,4 @@ const Who = () => {
   );
 };
 
-export default Who;
+export default SectionWrapper(About, "about");
