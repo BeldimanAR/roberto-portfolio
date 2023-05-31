@@ -1,8 +1,13 @@
 import React, { useRef } from "react";
 import { PerspectiveCamera, RenderTexture, Text } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
+import { useViewport } from "../hooks";
 
 const Cube = () => {
+  const viewport = useViewport();
+
+  const isMobile = viewport.width <= 768;
+  const cubeFontSize = isMobile ? 2 : 3.7;
   const textRef = useRef();
   useFrame(
     (state) =>
@@ -15,7 +20,7 @@ const Cube = () => {
         <RenderTexture attach="map">
           <PerspectiveCamera makeDefault position={[0, 0, 5]} />
           <color attach="background" args={["#3d1c56"]} />
-          <Text ref={textRef} fontSize={2.5} color="white">
+          <Text ref={textRef} fontSize={cubeFontSize} color="white">
             hello
           </Text>
         </RenderTexture>

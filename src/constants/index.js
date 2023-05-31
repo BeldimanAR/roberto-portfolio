@@ -186,67 +186,63 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Lyrics",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "This is a Spotify clone made using React, Redux and Tailwind, it allows users to search and listen to music. Users can also view top charts, song popular around them and the lyrics. The project uses the Shazam API to access and play the music.",
     tags: [
       {
-        name: "react",
+        name: "React.js",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "Redux",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "Tailwind",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: "/lyrics.png",
+    source_code_link: "https://github.com/BeldimanAR/Spotify-Clone",
   },
   {
-    name: "Job IT",
+    name: "Youtube-clone",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "This is a YouTube clone made using React, Material-UI, it allows users to search and watch videos. Users can also search channels, view analytics. The project uses the YouTube API to access and display video content.",
     tags: [
       {
-        name: "react",
+        name: "React.js",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "Material UI",
         color: "green-text-gradient",
       },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: "/youtube.png",
+    source_code_link: "https://github.com/BeldimanAR/youtube-app",
   },
   {
-    name: "Trip Guide",
+    name: "My old Portofolio",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "I built a portfolio website using React, SASS, and Sanity, a schemaless backend for storing & querying JSON documents and real-time subscriptions. It's a great way to showcase my work and experience in a dynamic and user-friendly way.",
     tags: [
       {
-        name: "nextjs",
+        name: "React.js",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "Sanity",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "Framer",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: "/portofolio.png",
+    source_code_link: "https://github.com/BeldimanAR/Beldiman-Portofolio",
   },
 ];
 

@@ -1,8 +1,10 @@
+"use client";
 import { useState, useEffect } from "react";
 import { navLinks } from "../constants/index.js";
 import styled from "styled-components";
 import Link from "next/link.js";
 import Image from "next/image.js";
+import { useRouter } from "next/navigation";
 
 const NavbarContainer = styled.nav`
   padding: 0 16px;
@@ -41,7 +43,7 @@ const StyledLogo = styled.div`
 `;
 const StyledText = styled.p`
   color: #ffffff;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   cursor: pointer;
 `;
@@ -121,15 +123,22 @@ const StyledLiMobile = styled.li<StyledLiProps>`
   cursor: pointer;
   font-size: 16px;
 `;
+const LinkDiv = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+`;
 
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+  const router = useRouter();
 
   return (
     <NavbarContainer>
       <Container>
-        <Links
+        <LinkDiv
           href="/"
           onClick={() => {
             setActive("");
@@ -139,7 +148,7 @@ const Navbar = () => {
             <Image src="/logo.svg" fill={true} alt="logo" />
           </StyledLogo>
           <StyledText>Roberto</StyledText>
-        </Links>
+        </LinkDiv>
         <StyledUl>
           {navLinks?.map((link) => {
             return (

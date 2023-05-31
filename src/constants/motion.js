@@ -9,7 +9,7 @@ export const textVariant = (delay) => {
       opacity: 1,
       transition: {
         type: "spring",
-        duration: 2,
+        duration: 1.5,
         delay: delay,
       },
     },

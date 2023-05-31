@@ -2,9 +2,13 @@ import React, { Suspense } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import Navbar2 from "./Navbar2";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useViewport } from "../hooks";
 import { Canvas, useThree } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
+import { textVariant } from "../constants/motion.js";
 
 const Section = styled.div`
   height: 100vh;
@@ -16,7 +20,7 @@ const Section = styled.div`
   background-image: url("/herobg.png");
 
   @media only screen and (max-width: 768px) {
-    height: 200vh;
+    height: 150vh;
   }
 `;
 
@@ -26,8 +30,14 @@ const Container = styled.div`
   width: 1400px;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 1450px) {
+    width: 1100px;
+  }
+  @media (max-width: 1100px) {
+    width: 800px;
+  }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 908px) {
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -36,7 +46,7 @@ const Container = styled.div`
 `;
 
 const Left = styled.div`
-  flex: 2;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,6 +64,17 @@ const Title = styled.h1`
   @media only screen and (max-width: 768px) {
     text-align: center;
   }
+  @media (min-width: 640px) {
+    font-size: 50px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 60px;
+  }
+
+  @media (max-width: 639px) {
+    font-size: 40px;
+  }
 `;
 
 const WhatWeDo = styled.div`
@@ -67,7 +88,14 @@ const Line = styled.img`
 `;
 
 const Subtitle = styled.h2`
-  color: #da4ea2;
+  font-size: 14px;
+  color: #aaa6c3;
+  text-transform: uppercase;
+  letter-spacing: wider;
+
+  @media (min-width: 640px) {
+    font-size: 18px;
+  }
 `;
 
 const Desc = styled.p`
@@ -79,15 +107,19 @@ const Desc = styled.p`
   }
 `;
 
-const Button = styled.button`
+const Button = styled.a`
+  width: fit-content;
   background-color: #915eff;
   color: white;
   font-weight: 500;
-  width: 100px;
   padding: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+
+  &:hover {
+    background-color: #c1a1ff;
+  }
 `;
 
 const Right = styled.div`
@@ -100,7 +132,7 @@ const Right = styled.div`
 `;
 
 const Img = styled.div`
-  width: 600px;
+  /* width: 600px; */
   height: 400px;
   object-fit: contain;
   position: absolute;
@@ -116,9 +148,9 @@ const Img = styled.div`
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-  @media only screen and (max-width: 768px) {
-    width: 90%;
-    height: 265px;
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 225px;
     /* margin: 0 auto; */
   }
 
@@ -133,11 +165,29 @@ const Span = styled.span`
   color: #915eff;
 `;
 
+const CanvasDiv = styled(motion.div)`
+flex: 0.5;
+position: relative;
+display:flex;
+justify-content:center;
+align-items: center;
+  /* height: 300px; */
+  /* margin-top: 70px; */
+  @media (min-width: 1280px) {
+    flex: 1;
+    width: 100%;z
+  }
+  @media (min-width: 768px) {
+    /* height: 550px; */
+    margin-top: 0;
+  }1
+`;
+
 const Hero = () => {
   const viewport = useViewport();
 
   const isMobile = viewport.width <= 768;
-  const scale = isMobile ? 1.5 : 2.4;
+  const scale = isMobile ? 2.2 : 2.4;
 
   return (
     <Section>
@@ -148,16 +198,17 @@ const Hero = () => {
             Hi, I'm <Span>Roberto</Span>
           </Title>
           <WhatWeDo>
-            <Line src="/line.png" />
+            {/* <Line src="/line.png" /> */}
             <Subtitle>What I Do</Subtitle>
           </WhatWeDo>
           <Desc>
             I do frontend development, creating cutting-edge, logic-driven
             solutions.
           </Desc>
-          <Button>Learn More</Button>
+
+          <Button href="#about">Learn More About Me</Button>
         </Left>
-        <Right>
+        <CanvasDiv variants={textVariant()}>
           <Canvas>
             <Suspense fallback={null}>
               <OrbitControls enableZoom={false} />
@@ -182,7 +233,7 @@ const Hero = () => {
               draggable={false}
             />
           </Img>
-        </Right>
+        </CanvasDiv>
       </Container>
     </Section>
   );

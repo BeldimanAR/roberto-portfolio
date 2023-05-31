@@ -6,22 +6,23 @@ import { SectionWrapper } from "../hoc";
 import Cube from "./Cube";
 import { motion } from "framer-motion";
 import { textVariant } from "../constants/motion.js";
+import { useViewport } from "../hooks";
 
 const Section = styled.div`
   /* height: 100vh; */
   /* scroll-snap-align: center; */
-  display: flex;
+  /* display: flex;
   justify-content: center;
 
   @media only screen and (max-width: 768px) {
     height: 200vh;
-  }
+  } */
 `;
 
 const Container = styled.div`
-  height: 100%;
-  scroll-snap-align: center;
-  width: 1400px;
+  /* height: 100%; */
+  /* scroll-snap-align: center; */
+  /* width: 1400px; */
   display: flex;
   justify-content: space-between;
 
@@ -33,9 +34,7 @@ const Container = styled.div`
   }
 `;
 
-const Left = styled.div`
-  flex: 1;
-`;
+const Left = styled(motion.div)``;
 
 const Title = styled.h1`
   font-size: 74px;
@@ -43,6 +42,18 @@ const Title = styled.h1`
 
   @media only screen and (max-width: 768px) {
     text-align: center;
+  }
+
+  @media (min-width: 640px) {
+    font-size: 50px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 60px;
+  }
+
+  @media (max-width: 639px) {
+    font-size: 40px;
   }
 `;
 
@@ -57,7 +68,17 @@ const Line = styled.img`
 `;
 
 const Subtitle = styled.h2`
-  color: #da4ea2;
+  font-size: 14px;
+  color: #aaa6c3;
+  text-transform: uppercase;
+  letter-spacing: wider;
+  @media only screen and (max-width: 768px) {
+    margin-top: 10px;
+    text-align: center;
+  }
+  @media (min-width: 640px) {
+    font-size: 18px;
+  }
 `;
 
 const Desc = styled.p`
@@ -69,18 +90,18 @@ const Desc = styled.p`
   }
 `;
 
-const Button = styled.button`
+const Button = styled.a`
   background-color: #915eff;
   color: white;
   font-weight: 500;
-  width: 120px;
+  width: fit-content;
   padding: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 `;
 
-const Right = styled(motion.div)`
+const Right = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -92,38 +113,50 @@ const Right = styled(motion.div)`
     align-items: center;
   }
 `;
+const CanvasDiv = styled(motion.div)`
+  height: 300px;
+  margin-top: 70px;
+  @media (min-width: 1280px) {
+    height: auto;
+    flex: 1 1 0%;
+  }
+  @media (min-width: 768px) {
+    height: 550px;
+    margin-top: 0;
+  }1
+`;
 
 const About = () => {
-  return (
-    <Section>
-      <Container>
-        <Left>
-          <Canvas camera={{ position: [5, 5, 5], fov: 16 }}>
-            <Suspense fallback={null}>
-              <ambientLight intensity={1.5} />
-              <directionalLight position={[3, 2, 1]} />
-              <Cube />
-              <OrbitControls enableZoom={false} autoRotate />
-            </Suspense>
-          </Canvas>
-        </Left>
+  const viewport = useViewport();
 
-        <Right variants={textVariant()}>
-          <Title>Thinking outside the box</Title>
-          <WhatWeDo>
-            <Line src="/line.png" />
-            <Subtitle>Who I Am</Subtitle>
-          </WhatWeDo>
+  const isMobile = viewport.width <= 768;
+  const fov = isMobile ? 14 : 18;
+  return (
+    <>
+      <Left variants={textVariant()}>
+        <Title>Thinking outside the box</Title>
+        <Subtitle>Who I Am</Subtitle>
+        <Right>
           <Desc>
             I'm a skilled frontend developer with experience in Next.js,
             React.js, GraphQL, Redux Toolkit, and NodeJS. I specialize in
             creating user-friendly interfaces and delivering high-quality
             software.
           </Desc>
-          <Button>See my works</Button>
+          <Button href="#work">See my Experience</Button>
         </Right>
-      </Container>
-    </Section>
+      </Left>
+      <CanvasDiv variants={textVariant()}>
+        <Canvas camera={{ position: [5, 5, 5], fov: fov }}>
+          <Suspense fallback={null}>
+            <ambientLight intensity={1.5} />
+            <directionalLight position={[3, 2, 1]} />
+            <Cube />
+            <OrbitControls enableZoom={false} autoRotate />
+          </Suspense>
+        </Canvas>
+      </CanvasDiv>
+    </>
   );
 };
 

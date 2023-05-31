@@ -114,10 +114,10 @@ const ExperienceCard = ({ experience }) => {
 const Works = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <>
         <Paragraph>What I have done so far</Paragraph>
         <Heading>Work Experience.</Heading>
-      </motion.div>
+      </>
 
       <WorksContainer>
         <VerticalTimeline className="line">
