@@ -4,7 +4,6 @@ import { navLinks } from "../constants/index.js";
 import styled from "styled-components";
 import Link from "next/link.js";
 import Image from "next/image.js";
-import { useRouter } from "next/navigation";
 
 const NavbarContainer = styled.nav`
   padding: 0 16px;
@@ -133,7 +132,6 @@ const LinkDiv = styled(Link)`
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
-  const router = useRouter();
 
   return (
     <NavbarContainer>

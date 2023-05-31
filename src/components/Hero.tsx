@@ -185,8 +185,8 @@ align-items: center;
 
 const Hero = () => {
   const viewport = useViewport();
-
-  const isMobile = viewport.width <= 768;
+  const width = viewport?.width;
+  const isMobile = width <= 768;
   const scale = isMobile ? 2.2 : 2.4;
 
   return (
@@ -225,13 +225,7 @@ const Hero = () => {
             </Suspense>
           </Canvas>
           <Img>
-            <Image
-              src="/moon3.png"
-              layout="fill"
-              objectFit="cover"
-              alt="moon"
-              draggable={false}
-            />
+            <Image src="/moon3.png" fill alt="moon" draggable={false} />
           </Img>
         </CanvasDiv>
       </Container>

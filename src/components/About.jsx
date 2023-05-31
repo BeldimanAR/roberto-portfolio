@@ -127,9 +127,9 @@ const CanvasDiv = styled(motion.div)`
 `;
 
 const About = () => {
-  const viewport = useViewport();
-
-  const isMobile = viewport.width <= 768;
+  const { viewport } = useViewport();
+  const width = viewport?.width;
+  const isMobile = width <= 768;
   const fov = isMobile ? 14 : 18;
   return (
     <>

@@ -4,9 +4,9 @@ import { useFrame } from "@react-three/fiber";
 import { useViewport } from "../hooks";
 
 const Cube = () => {
-  const viewport = useViewport();
-
-  const isMobile = viewport.width <= 768;
+  const { viewport } = useViewport();
+  const width = viewport?.width;
+  const isMobile = width <= 768;
   const cubeFontSize = isMobile ? 2 : 3.7;
   const textRef = useRef();
   useFrame(
