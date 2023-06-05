@@ -39,6 +39,7 @@ const Left = styled(motion.div)``;
 const Title = styled.h1`
   font-size: 74px;
   line-height: 1.2;
+  color: white;
 
   @media only screen and (max-width: 768px) {
     text-align: center;

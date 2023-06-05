@@ -60,6 +60,7 @@ const Left = styled.div`
 
 const Title = styled.h1`
   font-size: 74px;
+  color: white;
 
   @media only screen and (max-width: 768px) {
     text-align: center;
