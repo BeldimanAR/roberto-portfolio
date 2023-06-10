@@ -70,6 +70,17 @@ const StyledLi = styled.li<StyledLiProps>`
     color: #ffffff;
   }
 `;
+const StyledLiCV = styled.li`
+  color: #915eff;
+  font-size: 18px;
+  font-weight: medium;
+  cursor: pointer;
+  z-index: 10;
+
+  &:hover {
+    color: #ffffff;
+  }
+`;
 const MobileContainer = styled.div`
   display: none;
 
@@ -148,6 +159,14 @@ const Navbar = () => {
           <StyledText>Roberto</StyledText>
         </LinkDiv>
         <StyledUl>
+          <StyledLiCV key="download">
+            <a
+              href="https://drive.google.com/uc?export=download&id=1BZjvUct8kMR-C6RpmegsrPj1JQe806a9
+"
+            >
+              CV
+            </a>
+          </StyledLiCV>
           {navLinks?.map((link) => {
             return (
               <StyledLi
@@ -186,6 +205,14 @@ const Navbar = () => {
                   </StyledLiMobile>
                 );
               })}
+              <StyledLiCV key="download">
+                <a
+                  href="https://drive.google.com/uc?export=download&id=1BZjvUct8kMR-C6RpmegsrPj1JQe806a9
+"
+                >
+                  CV
+                </a>
+              </StyledLiCV>
             </MobileUl>
           </MobilePopUp>
         </MobileContainer>
