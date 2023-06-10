@@ -191,7 +191,7 @@ const Hero = () => {
   const viewport = useViewport();
   const width = viewport?.width;
   const isMobile = width <= 768;
-  const scale = isMobile ? 2.2 : 2.4;
+  const scale = isMobile ? 2.2 : 2;
 
   return (
     <Section>
