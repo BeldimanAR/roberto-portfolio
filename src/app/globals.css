@@ -72,6 +72,26 @@
   -webkit-text-fill-color: transparent;
 }
 
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #050816;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease-out; /* Adjust the transition duration as needed */
+}
+
+.loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .blue-text-gradient {
   /* background: -webkit-linear-gradient(#eee, #333); */
   background: #56ccf2; /* fallback for old browsers */

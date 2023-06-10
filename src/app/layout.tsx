@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import StyledComponentsRegistry from "./lib/registry";
+import Loader from "../components/Loader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html>
       <body>
+        <Loader />
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
     </html>
