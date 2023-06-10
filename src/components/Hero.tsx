@@ -18,6 +18,9 @@ const Section = styled.div`
   align-items: center;
   justify-content: space-between;
   background-image: url("/herobg.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
 
   @media only screen and (max-width: 768px) {
     height: 150vh;
