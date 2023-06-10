@@ -13,7 +13,7 @@ const Loader = () => {
       setTimeout(() => {
         setShowLoader(false);
       }, 500); // Delay before hiding the loader with the transition effect
-    }, 1500);
+    }, 500);
 
     // Clean up the timeouts when the component unmounts
     return () => {
