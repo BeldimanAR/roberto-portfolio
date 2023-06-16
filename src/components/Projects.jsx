@@ -37,7 +37,8 @@ const ProjectsHeading = styled.h2`
 `;
 const MotionCardWrapper = styled(motion.div)`
   margin-top: 0.75rem;
-  color: var(--text-secondary);
+  color: white;
+  /* color: var(--text-secondary); */
   font-size: 17px;
   max-width: 48rem;
   line-height: 30px;
