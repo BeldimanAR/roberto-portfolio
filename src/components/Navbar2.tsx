@@ -161,7 +161,7 @@ const Navbar = () => {
         <StyledUl>
           <StyledLiCV key="download">
             <a
-              href="https://drive.google.com/uc?export=download&id=1BZjvUct8kMR-C6RpmegsrPj1JQe806a9
+              href="https://drive.google.com/uc?export=download&id=1QEWYYzFjwzjpYHruAPTiZMxee-0IKPk-
 "
             >
               CV

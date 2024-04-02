@@ -159,11 +159,11 @@ const ProjectCard = ({
           <ProjectImage src={image} alt="project_image" />
 
           <CardInfoWrapper>
-            <GithubImgWrapper
+            {/* <GithubImgWrapper
               onClick={() => window.open(source_code_link, "_blank")}
             >
               <GithubImg src="/github.png" alt="source code" />
-            </GithubImgWrapper>
+            </GithubImgWrapper> */}
           </CardInfoWrapper>
         </ProjectCardWrapper>
 

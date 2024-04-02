@@ -16,22 +16,10 @@ export const navLinks = [
 const experiences = [
   {
     title: "Frontend Developer",
-    company_name: "Beldiman Group",
-    icon: "/company/logo BG.png",
-    iconBg: "#fff",
-    date: "July 2020 - March 2021",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-    ],
-  },
-  {
-    title: "React Developer",
     company_name: "WTZ Technologies",
     icon: "/company/wtz-logo.png",
     iconBg: "black",
-    date: "March 2021 - January 2022",
+    date: "Mar 2017 - Apr 2020",
     points: [
       "Delivering cutting-edge web solutions for institutional clients by leveraging React.js and related technologies, while focusing on enhancing code quality and streamlining production processes for efficient delivery.",
       "Working closely with diverse teams, including designers, product managers, and fellow developers, to drive the development of top-notch products that meet client requirements and exceed expectations.",
@@ -42,16 +30,30 @@ const experiences = [
   },
   {
     title: "Frontend Developer",
-    company_name: "Greensoft",
+    company_name: "Ahold Delhaize",
     icon: "/company/greensoft.png",
     iconBg: "#fff",
-    date: "January 2022 - Present",
+    date: "Apr 2020 - Jun 2022",
     points: [
       "Playing a pivotal role in an extensive multinational e-commerce project, involving a team of over 120 developers, to develop and manage high-traffic websites for a prominent company.",
       "Maintaining the highest standards of code quality and actively participating in code reviews to ensure optimal performance, scalability, and maintainability of the web applications.",
       "Taking on the responsibility of managing a dynamic and high-volume e-commerce site, catering to over 1 million customers weekly, and overseeing its smooth operation and continuous improvement.",
       "Collaborating closely with cross-functional teams, including designers, product managers, and developers, to deliver exceptional user experiences and meet the specific demands of the multinational company's e-commerce business.",
       "Experiencing the gratification of contributing to the success of the project by consistently delivering top-quality code and playing a vital role in the continuous enhancement of the web applications, resulting in increased customer satisfaction and business growth.",
+    ],
+  },
+  {
+    title: "Frontend Developer",
+    company_name: "Beldiman Group",
+    icon: "/company/logo BG.png",
+    iconBg: "#fff",
+    date: "Jun 2022 - Present",
+    points: [
+      "Spearheaded critical initiatives within multinational e-commerce projects, working alongside diverse teams to craft and manage high-traffic websites for leading organizations.",
+      "Ensured the adherence to top-tier code quality standards, actively engaging in comprehensive code reviews to optimize performance, scalability, and maintainability of web applications.",
+      "Took charge of managing dynamic e-commerce platforms catering to extensive customer bases, overseeing day-to-day operations, and driving continuous enhancement efforts to elevate user experiences.",
+      "Fostered seamless collaboration across cross-functional teams, including designers, product managers, and developers, to deliver exceptional user experiences tailored to the specific needs of each project.",
+      "Played an integral role in project success by consistently delivering high-quality code, driving improvements, and contributing to heightened customer satisfaction and business growth.",
     ],
   },
 ];
